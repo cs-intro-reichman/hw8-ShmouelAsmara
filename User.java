@@ -51,6 +51,9 @@ public class User {
      */
     public boolean follows(String name) {
         //// Replace the following statement with your code
+        if (fCount == 0) {
+            return false;
+        }
         for (int i = 0; i < fCount; i++) {
             if (follows[i].equals(name)) {
                 return true;
@@ -67,17 +70,15 @@ public class User {
     public boolean addFollowee(String name) {
         if (fCount >= maxfCount || name.equals(this.name)) {
             return false;
-        } else {
-            for (int i = 0; i < fCount; i++) {
-                if (follows[i].equals(name)) {
-                    return false;
-                }
-            }
-            follows[fCount] = name;
-            fCount++;
-            return true;
         }
-
+        for (int i = 0; i < fCount; i++) {
+            if (follows[i].equals(name)) {
+                return false;
+            }
+        }
+        follows[fCount] = name;
+        fCount++;
+        return true;
     }
 
     /**
