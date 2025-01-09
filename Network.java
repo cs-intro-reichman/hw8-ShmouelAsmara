@@ -126,15 +126,15 @@ public class Network {
         //// Replace the following statement with your code
         int maxF = -1;
         int countF = 0;
-        String popUser = null;
+        User popUser = null;
         for (int i = 0; i < userCount; i++) {
             countF = followeeCount(users[i].getName());
             if (countF > maxF) {
                 maxF = countF;
-                popUser = users[i].getName();
+                popUser = users[i];
             }
         }
-        return popUser;
+        return popUser.getName();
     }
 
     /**
