@@ -75,6 +75,7 @@ public class User {
             }
             follows[fCount] = name;
             fCount++;
+            follows[fCount] = null;
             return true;
         }
 
