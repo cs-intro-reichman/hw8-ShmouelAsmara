@@ -127,6 +127,9 @@ public class Network {
         int maxF = -1;
         int countF = 0;
         User popUser = null;
+        if (userCount == 0) {
+            return null;
+        }
         for (int i = 0; i < userCount; i++) {
             countF = followeeCount(users[i].getName());
             if (countF > maxF) {
